@@ -42,8 +42,8 @@ export const MakeCalculation=async(data)=>{
             method: "POST",
             headers: {
               "Authorization": `Bearer ${process.env.DEEPSEEK_KEY}`,
-              "HTTP-Referer": "<YOUR_SITE_URL>", // Optional. Site URL for rankings on openrouter.ai.
-              "X-Title": "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
+              "HTTP-Referer": "https://to-do-smart.onrender.com/",
+              "X-Title": "To Do Smart", 
               "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -56,7 +56,12 @@ export const MakeCalculation=async(data)=>{
               ]
             })
           });
-    
+
+        if (!process.env.DEEPSEEK_KEY) {
+            console.error("❌ DEEPSEEK_KEY is missing from environment variables.");
+            return "Server error: Missing API key. Please contact support.";
+        }        
+
           const data=await res.json();
           return data.choices?.[0]?.message?.content || "Something went wrong.please retry! 😓";
         
