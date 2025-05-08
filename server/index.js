@@ -11,7 +11,11 @@ dotenv.config();
 
 async function Server() {
     const app=express();
-    app.use(cors())
+    // Express.js
+app.use(cors({
+    origin: '*',
+  }));
+  
     app.use(express.json());
 
     const server=new ApolloServer({
