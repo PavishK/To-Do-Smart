@@ -22,7 +22,7 @@ async function Server() {
 
     app.use('/graphQl',expressMiddleware(server));
 
-    app.listen(8080,()=>console.log("Server Running on http://localhost:8080/graphQl"))
+    app.listen(8080,()=>console.log("Server Running..."))
     
 }
 
