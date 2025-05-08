@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.loading-animation{
+    width: 80px;
+    height: 80px;
+    border: 10px solid black;
+    border-radius: 100px;
+    transition: all 1s linear ease-in-out;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(360deg);
+        border-color: red;
+        border-radius: 30px;
+    }
+    100%{
+        transform: rotate(0deg);
+        border-color: green;
+        border-radius: 50px;
+    }
+}
