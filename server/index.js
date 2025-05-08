@@ -26,7 +26,7 @@ app.use(cors({
 
     app.use('/graphQl',expressMiddleware(server));
 
-    app.listen(8080,()=>console.log("Server Running..."))
+    app.listen(process.env.PORT,()=>console.log("Server Running..."))
     
 }
 
